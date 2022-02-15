@@ -13,7 +13,7 @@ const categorySchema = new Schema({
 
 const expenseSchema = new Schema({
   name: {
-    type: Number,
+    type: String,
   },
   amount: {
     type: Number,
