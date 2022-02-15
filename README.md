@@ -1,71 +1,44 @@
-# Decoupled MERN Stack with JWT Auth Template - Back End
+# <b>General Assembly LiveOnline Hackathon: February 2022</b>
 
-This is the back end of a decoupled MERN Stack app that includes JWT Authentication.
+## Challenge theme: "Accessible Money Monagement"
 
-When combined with the front end found [here](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end), you'll have all you need to build a full stack MERN app!
+Challenge questions: 
+* What does Accessible Money Management mean?
+* Consider what you can create to help people learn to manage finances or save money. 
 
-Use this to go build things! 🚀
 
-## To Use This Template
 
-**Replace `<name-of-your-app-here>` in the commands below with the name of your app!**
+# APP idea:
+A basic budgeting app that allows users to set financial goals and encourages them to meet them.
 
-```bash
-git clone https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-back-end <name-of-your-app-here>-back-end
-cd <name-of-your-app-here>-back-end
-```
+* Backend deployment link: [Heroku Link](https://hackathon-2-15-22.herokuapp.com)
 
-Once you are in the project directory:
+* Frontend deployment link: [Heroku Link](https://frontend-nine-tawny.vercel.app/)
 
-```bash
-rm -rf .git
-```
+---
+## Team Members: 
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+### Dev Team: 
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+* Angela Quach [github](https://github.com/eyeseegIT)
+* Eli Bokanga [github](https://github.com/elikyaB)
+* Anthony Lofredo [github](https://github.com/Lofredoa1)
+* Jan Horak [github](https://github.com/MrJanHorak)
 
-Re-initialize a git repository:
+### UX/UI Team:  
+* Lydia Jurcys
+* Gi Don Kang
+* Caitlyn Torres
 
-```bash
-git init
-```
 
-Use the GitHub CLI to create a new project repository on GitHub:
+## Wireframs: 
 
-```bash
-gh repo create <name-of-your-app-here>-back-end
-```
+[See wireframes on Figma](https://www.figma.com/file/o4nO2QfYkVxNebshuc5XhR/Hackathon-Project?node-id=0%3A1)
 
-Run npm i to fetch the template's dependencies:
+## ERD:
+[See ERD on Lucidchart](https://lucid.app/lucidchart/59dadab8-1c7b-4f6a-9cc5-ca110b3723cd/edit?invitationId=inv_9969d2dd-c746-4480-9b22-41ac4b57533d&referringApp=slack&page=0_0#)
 
-```bash
-npm i
-```
+## Icebox:
 
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL` and `SECRET` with values that you provide.
-
-> 🚨 Place secrets in this `.env` file. The contents of this file WILL NOT be exposed to site visitors.
-
-Delete this README.md, then make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
+  * push notifications/daily reminder emails
+  * 
