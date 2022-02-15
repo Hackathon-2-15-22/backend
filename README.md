@@ -41,4 +41,4 @@ A basic budgeting app that allows users to set financial goals and encourages th
 ## Icebox:
 
   * push notifications/daily reminder emails
-  * 
+ 
