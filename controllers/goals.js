@@ -12,6 +12,7 @@ const index = async (req, res) => {
 
 const create = async (req, res) => {
     try {
+        req.body.owner = req.user.profile
         const newGoal = new Goal(req.body)
         await newGoal.save()
         await Profile.findByIdAndUpdate(

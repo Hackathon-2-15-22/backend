@@ -13,6 +13,7 @@ const index = async (req, res) => {
 const create = async (req, res) => {
 
   try {
+    req.body.owner = req.user.profile
     const newExpense = new Expense(req.body);
     await newExpense.save();
     await Profile.updateOne(
