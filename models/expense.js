@@ -1,15 +1,6 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const Schema = mongoose.Schema
-
-const categorySchema = new Schema({
-  name: {
-    type: String, 
-    required: true,
-    lowercase: true, 
-    unique: true
-  }
-})
+const Schema = mongoose.Schema;
 
 const expenseSchema = new Schema({
   name: {
@@ -18,11 +9,35 @@ const expenseSchema = new Schema({
   amount: {
     type: Number,
   },
-  category: [categorySchema],
-})
+  category: {
+    type: String,
+    enum: [
+      "Housing",
+      "Transportation",
+      "Travel",
+      "Groceries",
+      "Dining Out",
+      "Utilities",
+      "Cell Phone",
+      "Pet Food & Care",
+      "Pet Insurance",
+      "Clothing & Personal Upkeep",
+      "Health Insurance",
+      "Memberships & Subscriptions",
+      "Life Insurance",
+      "Homeowners Insurance",
+      "Entertainment",
+      "Student Loans",
+      "Credit Card Debt",
+      "Retirement",
+      "Emergency Fund",
+      "Large Purchases",
+      "Goals",
+    ],
+    required: true,
+  },
+});
 
-const Expense = mongoose.model("Expense", expenseSchema)
+const Expense = mongoose.model("Expense", expenseSchema);
 
-export {
-  Expense
-}
+export { Expense };
