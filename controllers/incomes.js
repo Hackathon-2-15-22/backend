@@ -3,6 +3,7 @@ import { Income } from "../models/income.js"
 
 const create = async (req, res) => {
   try {
+    req.body.owner = req.user.profile
     const money = await new Income(req.body)
     await money.save()
     await Profile.updateOne(
