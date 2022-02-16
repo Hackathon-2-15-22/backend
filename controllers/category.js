@@ -9,3 +9,13 @@ const index = async (req, res) => {
   }
 }
 
+const create = async (req, res) => {
+  try {
+    const newCategory = new Category(req.body)
+    await newCategory.save()
+    return res.status(201).json(newCategory)
+  } catch (error) {
+    return res.status(500).json(error)
+  }
+}
+
