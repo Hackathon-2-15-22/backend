@@ -15,6 +15,20 @@ const create = async (req, res) => {
   }
 }
 
+const update = async (req, res) => {
+  try {
+    const updatedMoney = await Income.findByIdAndUpdate(
+      req.params._id,
+      { $set: req.body },
+      { new: true }
+      )
+    return res.status(200).json(updatedMoney)
+  } catch (err) {
+    return res.status(500).json(err)
+  }
+}
+
 export {
   create,
+  update,
 }
