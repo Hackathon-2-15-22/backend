@@ -3,8 +3,11 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const incomeSchema = new Schema({
+  name: {
+    type: String
+  },
   amount: {
-    type: Number,
+    type: Number
   }
 })
 
