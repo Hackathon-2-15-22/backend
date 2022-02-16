@@ -1,6 +1,6 @@
 # <b>General Assembly LiveOnline Hackathon: February 2022</b>
 
-## Challenge theme: "Accessible Money Monagement"
+## Challenge theme: "Accessible Money Management"
 
 Challenge questions: 
 * What does Accessible Money Management mean?
@@ -26,9 +26,9 @@ A basic budgeting app that allows users to set financial goals and encourages th
 * Jan Horak [github](https://github.com/MrJanHorak)
 
 ### UX/UI Team:  
-* Lydia Jurcys
-* Gi Don Kang
-* Caitlyn Torres
+* Lydia Jurcys [Portfolio](https://www.lydiajurcys.design/)
+* Gi Don Kang [Portfolio](https://www.gidonkang.com/)
+* Caitlyn Torres [Portfolio](https://www.caitlyn-torres.com/)
 
 
 ## Wireframs: 

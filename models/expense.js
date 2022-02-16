@@ -1,15 +1,6 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const Schema = mongoose.Schema
-
-const categorySchema = new Schema({
-  name: {
-    type: String, 
-    required: true,
-    lowercase: true, 
-    unique: true
-  }
-})
+const Schema = mongoose.Schema;
 
 const expenseSchema = new Schema({
   name: {
@@ -18,11 +9,9 @@ const expenseSchema = new Schema({
   amount: {
     type: Number,
   },
-  category: [categorySchema],
-})
+  category: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
+});
 
-const Expense = mongoose.model("Expense", expenseSchema)
+const Expense = mongoose.model("Expense", expenseSchema);
 
-export {
-  Expense
-}
+export { Expense };
