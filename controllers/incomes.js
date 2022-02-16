@@ -28,7 +28,20 @@ const update = async (req, res) => {
   }
 }
 
+const deleteIncome = async (req, res) => {
+  try {
+    await Income.findByIdAndDelete(req.params.id)
+    const profile = await Profile.findById(req.user.profile)
+    profile.income.remove({ _id: req.params.id })
+    await profile.save()
+    return res.status(204).end()
+  } catch (err) {
+    return res.status(500).json(err)
+  }
+}
+
 export {
   create,
   update,
+  deleteIncome as delete
 }

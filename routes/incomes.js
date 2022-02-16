@@ -11,6 +11,7 @@ const router = Router()
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, incomeCtrl.create)
 router.put('/:id', checkAuth, incomeCtrl.update)
+router.delete('/:id', checkAuth, incomeCtrl.delete)
 
 export {
   router
