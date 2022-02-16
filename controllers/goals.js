@@ -27,11 +27,11 @@ const create = async (req, res) => {
 const update = async (req, res) => {
     try {
         const updatedGoal = await Goal.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        { new: true }
-      );
-      return res.status(200).json(updatedExpense);
+            req.params.id,
+            req.body,
+            { new: true }
+        );
+        return res.status(200).json(updatedGoal);
     } catch (error) {
       return res.status(500).json(error);
     }
@@ -41,7 +41,7 @@ const deleteGoal = async (req, res) => {
     try {
       await Goal.findByIdAndDelete(req.params.id);
       const profile = await Profile.findById(req.user.profile);
-      profile.goals.remove({ _id: req.params.id });
+      profile.goal.remove({ _id: req.params.id });
       await profile.save();
       return res.status(204).end();
     } catch (error) {
