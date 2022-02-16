@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import * as goalCtrl from '../controllers/goal.js'
+import * as goalCtrl from '../controllers/goals.js'
 import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
 
 const router = Router()

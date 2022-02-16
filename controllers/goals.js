@@ -3,8 +3,8 @@ import { Profile } from '../models/profile.js'
 
 const index = async (req, res) => {
     try {
-        const goals = await Profile.find({email: req.body.email}).goals
-        return res.status(200).json(goals)
+        const user = await Profile.findOne({email: req.body.email})
+        return res.status(200).json(user.goal)
     } catch (error) {
         return res.status(500).json(error)
     }
@@ -15,8 +15,8 @@ const create = async (req, res) => {
         const newGoal = new Goal(req.body)
         await newGoal.save()
         await Profile.updateOne(
-        { _id: req.user.profile },
-        { $push: { goals: newGoal } }
+            { _id: req.user.profile },
+            { $push: { goals: newGoal } }
         )
         return res.status(201).json(newGoal)
     } catch (error) {
@@ -24,7 +24,7 @@ const create = async (req, res) => {
     }
 }
 
-function update(req, res) {
+const update = async (req, res) => {
     try {
         const updatedGoal = await Goal.findByIdAndUpdate(
         req.params.id,
