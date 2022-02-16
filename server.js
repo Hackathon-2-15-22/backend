@@ -7,6 +7,7 @@ import { router as profilesRouter } from './routes/profiles.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as incomesRouter } from './routes/incomes.js'
 import { router as expenseRouter } from './routes/expenses.js'
+import { router as categoryRouter } from './routes/categories.js'
 
 
 import('./config/database.js')
@@ -21,6 +22,7 @@ app.use('/api/profiles', profilesRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/incomes', incomesRouter)
 app.use('/api/expenses', expenseRouter)
+app.use('/api/categories', categoryRouter)
 
 app.use(function (req, res, next) {
   res.status(404).json({ err: "Not found" })

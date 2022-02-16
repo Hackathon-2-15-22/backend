@@ -11,13 +11,10 @@ const index = async (req, res) => {
 };
 
 const create = async (req, res) => {
-  console.log("in the create function");
+
   try {
-    console.log("in the try block");
     const newExpense = new Expense(req.body);
-    console.log("awaited the new expense");
     await newExpense.save();
-    console.log("saved the new expense");
     await Profile.updateOne(
       { _id: req.user.profile },
       { $push: { expenses: newExpense } }
