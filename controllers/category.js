@@ -31,3 +31,14 @@ const update = async (req, res) => {
     return res.status(500).json(error)
   }
 }
+
+const deleteCategory = async (res, req) => {
+  try {
+    await Category.findByIdAndDelete(req.params.id)
+    return res.status(204).end()
+  } catch(error) {
+    return res.status(500).json(error)
+  }
+}
+
+export { index, create, update, deleteCategory as delete }
