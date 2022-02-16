@@ -48,3 +48,4 @@ const deleteExpense = async (req, res) => {
   }
 }
 
+export { index, create, update, deleteExpense as delete }
