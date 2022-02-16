@@ -36,3 +36,15 @@ const update = async (req, res) => {
   }
 }
 
+const deleteExpense = async (req, res) => {
+  try {
+    await Expense.findByIdAndDelete(req,params.id)
+    const profile = await Profile.findById(req.user.profile)
+    profile.groups.remove({_id: req.params.id})
+    await profile.save()
+    return res.status(204).end()
+  } catch(error) {
+    return res.status(500).json(error)
+  }
+}
+
