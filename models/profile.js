@@ -1,12 +1,18 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-const profileSchema = new mongoose.Schema({
-  email: {type: String, required: true, lowercase: true, unique: true},
-  name: String,
-},{
+const profileSchema = new mongoose.Schema(
+  {
+    email: { type: String, required: true, lowercase: true, unique: true },
+    name: String,
+    income: [{ type: mongoose.Schema.Types.ObjectId, ref: "Income" }],
+    expenses: [{ type: mongoose.Schema.Types.ObjectId, ref: "Expense" }],
+    goal: [{ type: mongoose.Schema.Types.ObjectId, ref: "Goal" }],
+  },
+  {
     timestamps: true,
-})
+  }
+);
 
-const Profile = mongoose.model('Profile', profileSchema)
+const Profile = mongoose.model("Profile", profileSchema);
 
-export {Profile}
+export { Profile };
