@@ -19,3 +19,15 @@ const create = async (req, res) => {
   }
 }
 
+const update = async (req, res) => {
+  try {
+    const updatedCategory = await Category.findByIdAndUpdate (
+      req.params.id,
+      req.body,
+      { new: true }
+    )
+    return res.status(200).json(updatedCategory)
+  } catch (error) {
+    return res.status(500).json(error)
+  }
+}
