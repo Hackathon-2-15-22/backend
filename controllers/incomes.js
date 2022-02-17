@@ -25,6 +25,15 @@ const index = async (req, res) => {
   }
 };
 
+const show = async (req, res) => {
+  try {
+    const income = await Income.findById(req.params.id);
+    return res.status(200).json(income);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
 const update = async (req, res) => {
   try {
     const updatedMoney = await Income.findByIdAndUpdate(
@@ -52,6 +61,7 @@ const deleteIncome = async (req, res) => {
 
 export {
   index,
+  show,
   create,
   update,
   deleteIncome as delete
