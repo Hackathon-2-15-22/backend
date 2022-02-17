@@ -3,13 +3,12 @@ import { Profile } from '../models/profile.js'
 
 const index = async (req, res) => {
     try {
-        const profile = await Profile.findById(req.user.profile)
-        return res.status(200).json(profile.goal)
+        const profile = await Goal.find({})
+        return res.status(200).json(goals)
     } catch (error) {
         return res.status(500).json(error)
     }
 }
-
 const create = async (req, res) => {
     try {
         req.body.owner = req.user.profile
