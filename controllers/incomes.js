@@ -16,6 +16,15 @@ const create = async (req, res) => {
   }
 }
 
+const index = async (req, res) => {
+  try {
+    const incomes = await Income.find({});
+    return res.status(200).json(incomes);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
 const update = async (req, res) => {
   try {
     const updatedMoney = await Income.findByIdAndUpdate(
