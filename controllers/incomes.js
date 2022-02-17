@@ -51,6 +51,7 @@ const deleteIncome = async (req, res) => {
 }
 
 export {
+  index,
   create,
   update,
   deleteIncome as delete
