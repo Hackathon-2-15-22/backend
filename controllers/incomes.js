@@ -3,6 +3,7 @@ import { Income } from "../models/income.js"
 
 const create = async (req, res) => {
   try {
+    req.body.owner = req.user.profile
     const money = await new Income(req.body)
     await money.save()
     await Profile.updateOne(
@@ -14,6 +15,15 @@ const create = async (req, res) => {
     return res.status(500).json(err)
   }
 }
+
+const index = async (req, res) => {
+  try {
+    const incomes = await Income.find({});
+    return res.status(200).json(incomes);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
 
 const update = async (req, res) => {
   try {
