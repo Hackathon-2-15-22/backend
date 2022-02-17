@@ -3,7 +3,7 @@ import { Profile } from '../models/profile.js'
 
 const index = async (req, res) => {
     try {
-        const profile = await Goal.find({})
+        const goals = await Goal.find({})
         return res.status(200).json(goals)
     } catch (error) {
         return res.status(500).json(error)
