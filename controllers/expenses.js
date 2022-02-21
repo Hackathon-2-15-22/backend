@@ -10,6 +10,15 @@ const index = async (req, res) => {
   }
 };
 
+const show = async (req, res) => {
+  try {
+    const expense = await Expense.findById(req.params.id);
+    return res.status(200).json(expense);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
 const create = async (req, res) => {
 
   try {
@@ -51,4 +60,4 @@ const deleteExpense = async (req, res) => {
   }
 };
 
-export { index, create, update, deleteExpense as delete };
+export { index, show, create, update, deleteExpense as delete };
