@@ -14,6 +14,9 @@ const goalSchema = new Schema({
   amount: {
     type: Number,
   },
+},
+{
+  timestamps: true,
 })
 
 const Goal = mongoose.model("Goal", goalSchema)
