@@ -9,10 +9,17 @@ const incomeSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Profile",
   },
+  type: {
+    type: String
+  },
   amount: {
     type: Number
+  },
+},
+  {
+    timestamps: true,
   }
-})
+)
 
 const Income = mongoose.model("Income", incomeSchema)
 

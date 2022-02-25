@@ -10,10 +10,10 @@ const router = Router()
 // ========= Protected Routes ========= 
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, incomeCtrl.index)
+router.get('/:id', checkAuth, incomeCtrl.show)
 router.post('/', checkAuth, incomeCtrl.create)
 router.put('/:id', checkAuth, incomeCtrl.update)
 router.delete('/:id', checkAuth, incomeCtrl.delete)
-router.get('/:id', checkAuth, incomeCtrl.show)
 
 export {
   router

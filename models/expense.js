@@ -16,32 +16,14 @@ const expenseSchema = new Schema({
   },
   category: {
     type: String,
-    enum: [
-      "Housing",
-      "Transportation",
-      "Travel",
-      "Groceries",
-      "Dining Out",
-      "Utilities",
-      "Cell Phone",
-      "Pet Food & Care",
-      "Pet Insurance",
-      "Clothing & Personal Upkeep",
-      "Health Insurance",
-      "Memberships & Subscriptions",
-      "Life Insurance",
-      "Homeowners Insurance",
-      "Entertainment",
-      "Student Loans",
-      "Credit Card Debt",
-      "Retirement",
-      "Emergency Fund",
-      "Large Purchases",
-      "Goals",
-    ],
     required: true,
   },
-});
+},
+  {
+    timestamps: true,
+  }
+)
+
 
 const Expense = mongoose.model("Expense", expenseSchema);
 
