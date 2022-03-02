@@ -9,10 +9,13 @@ const incomeSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Profile",
   },
-  type: {
-    type: String
+  // type: {
+  //   type: String
+  // },
+  regularAmount: {
+    type: Number
   },
-  amount: {
+  additionalAmount: {
     type: Number
   },
 },
